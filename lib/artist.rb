@@ -6,17 +6,14 @@ class Artist
   attr_reader :songs
   
   extend Memorable, Findable
-
+  include paramable
+  
   @@artists = []
 
   def initialize
     @@artists << self
     @songs = []
   end
-
-  # def self.find_by_name(name)
-  #   @@artists.detect{|a| a.name == name}
-  # end
 
   def self.all
     @@artists
@@ -31,7 +28,7 @@ class Artist
     songs.each { |song| add_song(song) }
   end
 
-  def to_param
-    name.downcase.gsub(' ', '-')
-  end
+  # def to_param
+  #   name.downcase.gsub(' ', '-')
+  # end
 end
