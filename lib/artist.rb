@@ -2,7 +2,7 @@ require 'pry'
 
 class Artist
   
-  extend lib/concerns/memorable.rb 
+  extend module Memorable 
   
   attr_accessor :name
   attr_reader :songs
