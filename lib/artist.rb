@@ -6,7 +6,7 @@ class Artist
   attr_reader :songs
   
   extend Memorable, Findable
-  include paramable
+  include Paramble
   
   @@artists = []
 
